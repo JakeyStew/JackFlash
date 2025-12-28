@@ -1,0 +1,16 @@
+media:
+  input: public/images
+  output: /images
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    create: true
+    format: "md"
+    fields:
+      - { name: "title", label: "Title", type: "string" }
+      - { name: "slug", label: "Slug", type: "string" }
+      - { name: "featuredImage", label: "Featured Image", type: "image" }
+      - { name: "gallery", label: "Gallery", type: "image", list: true }
+      - { name: "description", label: "Description", type: "text" }
