@@ -1,16 +1,17 @@
 ---
+// src/pages/projects/index.astro
+import { getCollection } from 'astro:content';
 
+const projects = await getCollection('projects');
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<ul>
+  {projects.map(project => (
+    <li>
+      <a href={`/projects/${project.data.slug}`}>
+        <img src={project.data.featuredImage} alt={project.data.title} />
+        <h2>{project.data.title}</h2>
+      </a>
+    </li>
+  ))}
+</ul>
