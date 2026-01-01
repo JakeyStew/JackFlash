@@ -1,9 +1,123 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro/components/Image.astro';
+
+import portfolio from "../content/portfolio.yml";
 ---
 
+<style>
+  .portfolio {
+    column-count: 3;
+    column-gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  @media (max-width: 900px) {
+    .portfolio { column-count: 2; }
+  }
+
+  @media (max-width: 500px) {
+    .portfolio { column-count: 1; }
+  }
+
+  .portfolio li {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-item {
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .caption {
+    padding: 0.5rem 0;
+  }
+
+  /* Lightbox */
+  #lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: grid;
+    place-items: center;
+    z-index: 1000;
+  }
+
+  #lightbox img {
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+
+  #close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  #lightbox-caption {
+    color: white;
+    margin-top: 1rem;
+  }
+</style>
+
 <BaseLayout>
-  <ul>
-    <li><p>Hi</p></li>
+  <ul class="portfolio">
+    {portfolio.items.map((item, index) => (
+      <li>
+        <button
+          class="portfolio-item"
+          data-index={index}
+          aria-label={`Open ${item.title}`}
+        >
+          <Image
+            src={item.image}
+            alt={item.title}
+            loading="lazy"
+          />
+          <div class="caption">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </div>
+        </button>
+      </li>
+    ))}
   </ul>
+
+  <!-- Lightbox -->
+  <div id="lightbox" hidden>
+    <button id="close">×</button>
+    <img id="lightbox-img" alt="" />
+    <p id="lightbox-caption"></p>
+  </div>
+  <script>
+    const items = Array.from(document.querySelectorAll('.portfolio-item'));
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    const caption = document.getElementById('lightbox-caption');
+    const close = document.getElementById('close');
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const image = item.querySelector('img');
+        img.src = image.src;
+        img.alt = image.alt;
+        caption.textContent = item.querySelector('h3')?.textContent || '';
+        lightbox.hidden = false;
+      });
+    });
+
+    close.addEventListener('click', () => {
+      lightbox.hidden = true;
+    });
+  </script>
 </BaseLayout>
