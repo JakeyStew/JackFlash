@@ -1,17 +1,21 @@
 ---
 // src/pages/projects/index.astro
 import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const projects = await getCollection('projects');
+const pageTitle = "Homepage";
 ---
 
-<ul>
-  {projects.map(project => (
-    <li>
-      <a href={`/projects/${project.data.slug}`}>
-        <img src={project.data.featuredImage} alt={project.data.title} />
-        <h2>{project.data.title}</h2>
-      </a>
-    </li>
-  ))}
-</ul>
+<BaseLayout pageTitle={pageTitle}>
+  <ul>
+    {projects.map(project => (
+      <li>
+        <a href={`/projects/${project.data.slug}`}>
+          <img src={project.data.featuredImage} alt={project.data.title} />
+          <h2>{project.data.title}</h2>
+        </a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
