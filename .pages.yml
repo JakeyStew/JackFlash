@@ -4,19 +4,3 @@ media:
    input: src/images
    output: images
    extensions: [ png, webp ]
-
-<<<<<<< HEAD
-collections:
-  - name: "projects"
-    label: "Projects"
-    folder: "src/content/projects"
-    create: true
-    format: "md"
-    fields:
-      - { name: "title", label: "Title", type: "string" }
-      - { name: "slug", label: "Slug", type: "string" }
-      - { name: "featuredImage", label: "Featured Image", type: "image" }
-      - { name: "gallery", label: "Gallery", type: "image", list: true }
-      - { name: "description", label: "Description", type: "text" }
-=======
->>>>>>> 9cfcf4ea44e621c9d05fcd7e57ba17a920554e4e
