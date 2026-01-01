@@ -2,6 +2,6 @@ media:
  - name: images
    label: Media
    input: images
-   output: /images
+   output: src/images
    extensions: [ png, webp ]
 
