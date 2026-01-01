@@ -21,7 +21,7 @@ content:
         type: string
       - name: image
         label: Image
-        type: media
+        type: image
         required: true
       - name: order
         label: Order
