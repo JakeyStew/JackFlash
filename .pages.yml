@@ -5,10 +5,10 @@ media:
    output: images
    extensions: [ png, webp ]
 collections:
-  - name: portfolio
+  portfolio:
     label: Portfolio Projects
     folder: src/content/portfolio
-    type: yaml  # or 'markdown' if you use .md files
+    type: yaml
     fields:
       - name: title
         label: Title
@@ -23,4 +23,5 @@ collections:
       - name: order
         label: Order
         type: number
+
 
