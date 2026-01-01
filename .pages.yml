@@ -1,6 +1,6 @@
 media: 
  - name: images
    label: Media
-   input: src/images
+   input: images
    output: images
    extensions: [ png, webp ]
