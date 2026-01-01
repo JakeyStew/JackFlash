@@ -1,8 +1,8 @@
 ---
 title: "Example Project"
-featuredImage: "/images/images.jpg"
+featuredImage: "src/images/images.jpg"
 gallery:
-  - "/images/images-1.jpg"
-  - "/images/images-2.jpg"
+  - "src/images/images-1.jpg"
+  - "src/images/images-2.jpg"
 description: "This is a test project for the portfolio."
 ---
