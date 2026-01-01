@@ -9,7 +9,6 @@ content:
     label: Portfolio Projects
     type: collection
     path: src/content/portfolio
-    extension: yml
     view:
       fields: [ title, image, order ]
     fields:
