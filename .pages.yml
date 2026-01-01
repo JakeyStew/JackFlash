@@ -1,6 +1,6 @@
 media: 
- - name: images # Note: 'name' key is required here
-   label: Images
+ - name: images
+   label: Media
    input: images
    output: /images
    extensions: [ png, webp ]
