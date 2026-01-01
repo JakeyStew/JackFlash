@@ -1,26 +1,7 @@
-collections:
-  - name: pages
-    label: Pages
-    folder: src/content/pages
-    create: true
-    fields:
-      - name: title
-        label: Title
-        type: text
-      - name: body
-        label: Content
-        type: markdown
-
-  - name: gallery
-    label: Gallery
-    folder: src/content/gallery
-    create: true
-    fields:
-      - name: image
-        label: Image
-        type: image
-      - name: alt
-        label: Alt text
-        type: text
-        required: false
+media: 
+ - name: images # Note: 'name' key is required here
+   label: Images
+   input: images
+   output: /images
+   extensions: [ png, webp ]
 
