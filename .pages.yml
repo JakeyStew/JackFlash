@@ -4,18 +4,20 @@ media:
    input: src/images
    output: images
    extensions: [ png, webp ]
-collections:
+content:
   - name: portfolio
     label: Portfolio Projects
-    folder: src/content/portfolio
-    type: yaml  # or 'markdown' if you use .md files
+    type: collection
+    path: src/content/portfolio
+    view:
+      fields: [ title, image, order ]
     fields:
       - name: title
         label: Title
-        type: text
+        type: string
       - name: description
         label: Description
-        type: text
+        type: string
       - name: image
         label: Image
         type: media
@@ -23,4 +25,3 @@ collections:
       - name: order
         label: Order
         type: number
-
