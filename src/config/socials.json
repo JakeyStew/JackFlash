@@ -1,19 +1,19 @@
 {
   "social_links": [
     {
-      "platform": "facebook",
+      "platform": "Facebook",
       "url": "https://www.facebook.com/yourprofile"
     },
     {
-      "platform": "twitter",
-      "url": "https://www.twitter.com/yourprofile"
+      "platform": "X",
+      "url": "https://x.com/yourprofile"
     },
     {
-      "platform": "instagram",
+      "platform": "Instagram",
       "url": "https://www.instagram.com/yourprofile"
     },
     {
-      "platform": "linkedin",
+      "platform": "Linkedin",
       "url": "https://www.linkedin.com/in/yourprofile"
     }
   ]
