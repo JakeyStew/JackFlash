@@ -6,6 +6,7 @@ import socials from '../../config/socials.json';  // Import the social links fro
 
 // Styles
 import '../footer/footer.scss';
+import FooterGallery from '../footerGallery/FooterGallery.astro';
 
 // Scripts
 const d = new Date();
@@ -21,6 +22,7 @@ const { social_links } = socials;  // Get the list of social links from CMS
   <div class="footer-container">
     <!-- Pass social_links as a prop to Socials.astro -->
     <Socials social_links={social_links} />
+    <FooterGallery />
     <p class="footer-text">© {year} {title}. All Rights Reserved.</p>
   </div>
 </footer>
