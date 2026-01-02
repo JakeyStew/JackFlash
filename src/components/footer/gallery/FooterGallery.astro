@@ -1,13 +1,15 @@
 ---
-const { footer_images } = Astro.props;  // Get footer images directly from CMS
+// Accept the footer_images prop
+const { footer_images } = Astro.props;  
+console.info(footer_images);  // Log the footer images for debugging
 
-// Assuming `footer_images` is passed as part of your CMS configuration
-const imagePaths = footer_images.map(image => image.src);  // Use the `src` or relevant key to access image URL
-console.info(imagePaths); // Log paths for debugging
+// Map over the images array to extract the `image` path
+const imagePaths = footer_images.map((image: { image: any; }) => image.image);
+console.info(imagePaths);  // Log the paths to check they are correct
 ---
 
 <div class="footer-gallery">
-  {imagePaths.map((image) => (
-    <img src={image} alt="Footer Gallery Image" class="footer-gallery-image" />
+  {imagePaths.map((image: string | null | undefined, index: number) => (
+    <img src={image} alt={`Footer Gallery Image ${index + 1}`} class="footer-gallery-image" />
   ))}
 </div>

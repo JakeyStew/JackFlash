@@ -1,11 +1,10 @@
 ---
-
 //Imports
 import Socials from '../socials/Socials.astro';
 import socials from '../../config/socials.json'; 
 import FooterGallery from './gallery/FooterGallery.astro';
 import { images } from '../../config/footer-gallery.json';
-
+console.info(images)
 // Styles
 import '../footer/footer.scss';
 
@@ -13,15 +12,13 @@ import '../footer/footer.scss';
 const d = new Date();
 let year = d.getFullYear();
 
-
 // Props
 const { title } = Astro.props;
-const { social_links } = socials;  // Get the list of social links from CMS
+const { social_links } = socials;
 ---
 
 <footer class="footer">
   <div class="footer-container">
-    <!-- Pass social_links as a prop to Socials.astro -->
     <Socials social_links={social_links} />
     <FooterGallery  footer_images={images} />
     <p class="footer-text">© {year} {title}. All Rights Reserved.</p>
