@@ -3,11 +3,11 @@ import BaseHead from '../components/head/BaseHead.astro';
 import Header from '../components/header/Header.astro';
 import Footer from '../components/footer/Footer.astro';
 
-import { SITE_DESC, SITE_TITLE } from '../consts';
+import { title as SITE_TITLE, description as SITE_DESCRIPTION } from '../config/site.json';
 ---
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESC}/>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
   </head>
   <body>
     <Header />
