@@ -1,18 +1,9 @@
 ---
-import fs from 'fs';
-import path from 'path';
+const { footer_images } = Astro.props;  // Get footer images directly from CMS
 
-// Path to the images directory
-const imagesDirectory = path.resolve('./src/images/footer');  // Assuming your footer images are in a `footer` subfolder within `images`
-
-// Get all image files (png, webp, jpg)
-const imageFiles = fs.readdirSync(imagesDirectory).filter((file) =>
-  ['.png', '.jpg', '.webp'].includes(path.extname(file).toLowerCase())
-);
-
-// Map the image paths for rendering
-const imagePaths = imageFiles.map((file) => `/images/footer/${file}`);
-console.info(imagePaths)
+// Assuming `footer_images` is passed as part of your CMS configuration
+const imagePaths = footer_images.map(image => image.src);  // Use the `src` or relevant key to access image URL
+console.info(imagePaths); // Log paths for debugging
 ---
 
 <div class="footer-gallery">

@@ -43,3 +43,15 @@ content:
             type: string
             required: true
             pattern: ^https?://.*  # Ensure it's a valid URL
+  - name: footer-gallery
+    label: Footer Gallery
+    path: src/config/footer-gallery.json
+    type: file
+    fields:
+      - name: images
+        label: Footer Images
+        list: true  # Allow multiple image entries
+        fields:
+          - name: image
+            label: Image File
+            type: image
