@@ -1,30 +1,14 @@
 ---
-import socials from '../../config/socials.json'; // Import the social links from the CMS
+import Socials from '../socials/Socials.astro';  // Import the Socials component
+import socials from '../../config/socials.json';  // Import the social links from the CMS
 
 const { social_links } = socials;  // Get the list of social links from CMS
 ---
 
 <footer class="footer">
   <div class="footer-container">
-    <nav class="social-links">
-      {social_links.map((social) => (
-        <a
-          href={social.url}  // Use the social media URL from CMS
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-link"
-          aria-label={social.platform}  // Use the platform name for accessibility
-        >
-          {/* Dynamically use the favicon for each platform */}
-          <img 
-            src={`https://www.${social.platform}.com/favicon.ico`} 
-            alt={`${social.platform} icon`} 
-            class="social-icon" 
-          />
-          <span class="sr-only">{social.platform}</span>  {/* Accessibility text */}
-        </a>
-      ))}
-    </nav>
+    <!-- Pass social_links as a prop to Socials.astro -->
+    <Socials social_links={social_links} />
     <p class="footer-text">© 2026 YourSiteName. All Rights Reserved.</p>
   </div>
 </footer>
@@ -40,28 +24,6 @@ const { social_links } = socials;  // Get the list of social links from CMS
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-  }
-
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 1rem;
-  }
-
-  .social-link {
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-  }
-
-  .social-link:hover {
-    opacity: 0.8;
-  }
-
-  .social-icon {
-    width: 24px;
-    height: 24px;
   }
 
   .footer-text {

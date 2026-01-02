@@ -1,12 +1,23 @@
 ---
-const { social_links } = Astro.props;
+const { social_links } = Astro.props;  // Get social_links passed from the parent
 ---
 
 <div class="social-links">
-  {social_links.map((social: { url: string | URL | null | undefined; platform: unknown; }) => (
-    <a href={social.url} target="_blank" rel="noopener noreferrer" class="social-link">
-      <img src={`https://www.${social.platform}.com/favicon.ico`} alt={social.platform} class="social-icon" />
-      {social.platform}
+  {social_links.map((social) => (
+    <a
+      href={social.url} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="social-link" 
+      aria-label={social.platform}  // Accessibility: label with the platform name
+    >
+      {/* Dynamically use the favicon for each platform */}
+      <img 
+        src={`https://www.${social.platform}.com/favicon.ico`} 
+        alt={`${social.platform} icon`} 
+        class="social-icon" 
+      />
+      <span class="sr-only">{social.platform}</span> {/* Hidden text for screen readers */}
     </a>
   ))}
 </div>
