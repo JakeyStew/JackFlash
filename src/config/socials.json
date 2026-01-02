@@ -15,6 +15,10 @@
     {
       "platform": "Linkedin",
       "url": "https://www.linkedin.com/in/yourprofile"
+    },
+    {
+      "platform": "Pic-Time",
+      "url": "https://www.pic-time.com/"
     }
   ]
 }
