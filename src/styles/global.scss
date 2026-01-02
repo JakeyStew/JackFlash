@@ -1,0 +1,28 @@
+html {
+  background-color: #ffffff;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100vw;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  // Supports weights 400-900
+  font-family: 'Playfair Display Variable', sans-serif;
+  font-weight: 900;
+}
+
+p, span {
+  // Supports weights 400-700
+  font-family: 'Lora variable', sans-serif;
+  font-weight: 400;
+}
