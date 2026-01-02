@@ -45,12 +45,12 @@ content:
             pattern: ^https?://.*  # Ensure it's a valid URL
   - name: footer-gallery
     label: Footer Gallery
-    path: src/config/footer-gallery.json
+    path: src/config/footer-gallery.config.ts  # This points to your configuration file
     type: file
     fields:
       - name: images
         label: Footer Images
-        list: true  # Allow multiple image entries
+        list: true
         fields:
           - name: image
             label: Image File
