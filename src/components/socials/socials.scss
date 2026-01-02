@@ -1,3 +1,41 @@
+/* General styles for the container */
 .social-links {
-    background-color: aqua;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;  /* Allow icons to wrap if the screen is narrow */
+}
+
+/* Each social link */
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px; /* Space between icons */
+  transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+/* Last link should not have right margin */
+.social-link:last-child {
+  margin-right: 0;
+}
+
+/* Icon styling */
+.social-icon {
+  width: 40px;         /* Set a fixed size */
+  height: 40px;
+  border-radius: 50%;   /* Makes the icon round */
+  object-fit: cover;    /* Ensure the image is contained */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Add smooth hover effect */
+}
+
+/* Hover effect */
+.social-link:hover .social-icon {
+  transform: scale(1.1); /* Slightly enlarge the icon */
+  filter: brightness(1.2); /* Brighten the icon */
+}
+
+/* Fallback image if the favicon can't be loaded */
+.social-icon.onError {
+  content: url('path/to/fallback-icon.png'); /* Path to fallback icon */
 }

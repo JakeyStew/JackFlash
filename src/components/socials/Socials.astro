@@ -7,21 +7,30 @@ const { social_links } = Astro.props;  // Get social_links passed from the paren
 ---
 
 <div class="social-links">
-  {social_links.map((social) => (
-    <a
-      href={social.url} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      class="social-link" 
-      aria-label={social.platform}  // Accessibility: label with the platform name
-    >
-      {/* Dynamically use the favicon for each platform */}
-      <img 
-        src={`https://www.${social.platform}.com/favicon.ico`} 
-        alt={`${social.platform} icon`} 
-        class="social-icon" 
-      />
-      <span class="sr-only">{social.platform}</span> {/* Hidden text for screen readers */}
-    </a>
-  ))}
+  {social_links.map((social) => {
+    const domain = new URL(social.url).hostname;
+    const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
+
+    return (
+      <a
+        href={social.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        aria-label={social.platform}
+        title={`Visit ${social.platform}`}
+      >
+        <img
+          src={faviconUrl}
+          alt={`${social.platform} icon`}
+          class="social-icon"
+          onError={(e) => {
+            e.target.src = 'path/to/fallback-icon.png'; // Fallback on error
+          }}
+        />
+        <span class="sr-only">{social.platform}</span>
+      </a>
+    );
+  })}
 </div>
+
