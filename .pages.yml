@@ -32,7 +32,7 @@ content:
     fields:
       - name: social_links
         label: Social Media Links
-        type: list  # Use a list type to allow multiple entries
+        list: true  # Use a list type to allow multiple entries
         fields:
           - name: platform
             label: Platform Name (e.g., Facebook, Twitter)
