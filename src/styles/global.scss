@@ -26,3 +26,14 @@ p, span {
   font-family: 'Lora variable', sans-serif;
   font-weight: 400;
 }
+
+.sr-only {
+  position: absolute;      /* Removes the element from normal flow */
+  width: 1px;              /* Makes the element very small */
+  height: 1px;
+  margin: -1px;            /* Pushes the element outside of the visible area */
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);  /* Ensures it’s completely hidden off-screen */
+  overflow: hidden;        /* Hides any overflow */
+}
