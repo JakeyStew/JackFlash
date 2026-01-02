@@ -1,4 +1,12 @@
 ---
-const { platform, username } = Astro.props;
+const { social_links } = Astro.props;
 ---
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+
+<div class="social-links">
+  {social_links.map((social: { url: string | URL | null | undefined; platform: unknown; }) => (
+    <a href={social.url} target="_blank" rel="noopener noreferrer" class="social-link">
+      <img src={`https://www.${social.platform}.com/favicon.ico`} alt={social.platform} class="social-icon" />
+      {social.platform}
+    </a>
+  ))}
+</div>

@@ -25,3 +25,21 @@ content:
         label: Preview image
         type: image
         description: Image used in the social preview on social networks (e.g. Facebook, Twitter...)
+  - name: socials
+    label: Social Settings
+    path: src/config/socials.json
+    type: file
+    fields:
+      - name: social_links
+        label: Social Media Links
+        type: list
+        description: Add your social media URLs here
+        fields:
+          - name: platform
+            label: Social Media Platform
+            type: string
+            description: The name of the social media platform (e.g., "Facebook", "Twitter")
+          - name: url
+            label: Social Media URL
+            type: string
+            pattern: ^(https?://)?(www.)?[a-zA-Z0-9.-]+.[a-zA-Z]{2,}(/[^s]*)?$
