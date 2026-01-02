@@ -1,8 +1,7 @@
 ---
-import socials from '../../config/socials.json';  // Import social links data from CMS
+import socials from '../../config/socials.json'; // Import the social links from the CMS
 
-// Extract the social links array
-const { social_links } = socials;
+const { social_links } = socials;  // Get the list of social links from CMS
 ---
 
 <footer class="footer">
@@ -10,18 +9,19 @@ const { social_links } = socials;
     <nav class="social-links">
       {social_links.map((social) => (
         <a
-          href={social.url}
+          href={social.url}  // Use the social media URL from CMS
           target="_blank"
           rel="noopener noreferrer"
           class="social-link"
-          aria-label={social.platform}
+          aria-label={social.platform}  // Use the platform name for accessibility
         >
+          {/* Dynamically use the favicon for each platform */}
           <img 
             src={`https://www.${social.platform}.com/favicon.ico`} 
             alt={`${social.platform} icon`} 
             class="social-icon" 
           />
-          <span class="sr-only">{social.platform}</span>  <!-- Screen reader-friendly text -->
+          <span class="sr-only">{social.platform}</span>  {/* Accessibility text */}
         </a>
       ))}
     </nav>
@@ -67,18 +67,5 @@ const { social_links } = socials;
   .footer-text {
     font-size: 0.875rem;
     color: #bbb;
-  }
-
-  /* Screen reader accessibility */
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    clip-path: inset(50%);
-    overflow: hidden;
   }
 </style>

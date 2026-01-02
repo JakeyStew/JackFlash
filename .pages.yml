@@ -32,14 +32,14 @@ content:
     fields:
       - name: social_links
         label: Social Media Links
-        type: list
-        description: Add your social media URLs here
+        type: list  # Use a list type to allow multiple entries
         fields:
           - name: platform
-            label: Social Media Platform
+            label: Platform Name (e.g., Facebook, Twitter)
             type: string
-            description: The name of the social media platform (e.g., "Facebook", "Twitter")
+            required: true
           - name: url
-            label: Social Media URL
+            label: URL
             type: string
-            pattern: ^(https?://)?(www.)?[a-zA-Z0-9.-]+.[a-zA-Z]{2,}(/[^s]*)?$
+            required: true
+            pattern: ^https?://.*  # Ensure it's a valid URL
