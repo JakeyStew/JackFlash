@@ -11,6 +11,10 @@
     {
       "platform": "Pic-Time",
       "url": "https://www.pic-time.com/"
+    },
+    {
+      "platform": "X",
+      "url": "https://www.x.com/profile"
     }
   ]
 }
