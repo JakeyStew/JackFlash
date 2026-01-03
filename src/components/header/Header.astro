@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { title as SITE_TITLE, description as SITE_DESC, url as SITE_URL, logo as SITE_LOGO } from '../../config/site.json';
 
 interface Props {
@@ -18,12 +19,13 @@ const { title = SITE_TITLE, description = SITE_DESC, url = SITE_URL, image = SIT
     aria-label={`${title}`}
     title={`Go back to ${title} homnepage`}
   >
-    <img       
+    <Image       
       src={image}
       alt={`${title} logo`}
       width="160"
       height="48"
       decoding="async"
+      loading={'eager'}
       fetchpriority="high"/>
   </a>
   <nav>

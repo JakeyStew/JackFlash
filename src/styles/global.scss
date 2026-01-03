@@ -5,8 +5,8 @@ html {
 }
 
 body {
-  padding: 1rem;
-  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -44,19 +44,10 @@ p, span {
 
 /* Small tablets and larger mobile devices (481px - 768px) */
 @media (min-width: 481px) {
-  body {
-    font-size: 15px;
-    padding: 20px;
-  }
 }
 
 /* Tablets and small laptops (769px - 1024px) */
 @media (min-width: 769px) {
-  body {
-    font-size: 16px;
-    padding: 24px;
-  }
-
   .container {
     max-width: 90%;
     margin: 0 auto;
@@ -65,11 +56,6 @@ p, span {
 
 /* Large desktops and high-resolution screens (1025px and up) */
 @media (min-width: 1025px) {
-  body {
-    font-size: 18px;
-    padding: 32px;
-  }
-
   .container {
     max-width: 80%;
   }
@@ -77,11 +63,6 @@ p, span {
 
 /* Extra-large screens (1440px and up) */
 @media (min-width: 1440px) {
-  body {
-    font-size: 20px;
-    padding: 40px;
-  }
-
   .container {
     max-width: 70%;
   }

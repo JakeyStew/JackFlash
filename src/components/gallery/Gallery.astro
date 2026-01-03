@@ -1,20 +1,37 @@
 ---
+import { Image } from 'astro:assets';
 import gallery from '../../config/gallery.json';
+import '../gallery/Gallery.scss';
 const { images } = gallery;
 ---
 
-<div class="gallery">
-  {images.map((item) => (
+<div class="gallery masonry">
+  {images.map((item, index) => (
     <figure class="gallery-item">
-      <img
+      <a href={`#img-${index}`}>
+        <Image
+            src={item.image}
+            alt={item.alt}
+            width={item.width}
+            height={item.height}
+            loading={'eager'}
+            decoding="async"
+        />
+      </a>
+      {/*item.caption && <figcaption>{item.caption}</figcaption>*/}
+    </figure>
+  ))}
+</div>
+
+{images.map((item, index) => (
+  <div id={`img-${index}`} class="lightbox">
+    <a href="#" class="lightbox-close" aria-label="Close image"></a>
+    <Image
         src={item.image}
         alt={item.alt}
         width={item.width}
         height={item.height}
-        loading="lazy"
-        decoding="async"
-      />
-      {item.caption && <figcaption>{item.caption}</figcaption>}
-    </figure>
-  ))}
-</div>
+        loading={'eager'}
+    />
+  </div>
+))}

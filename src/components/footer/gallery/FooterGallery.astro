@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import footerGallery from '../../../config/footer-gallery.json';  // Import the PagesCMS config
 
 const { images } = footerGallery;  // Destructure the images array
@@ -6,11 +7,11 @@ const { images } = footerGallery;  // Destructure the images array
 
 <div class="footer-gallery">
   {images?.map((item, index) => (
-    <img
+    <Image
       src={item.image}
       alt={`Footer Gallery Image ${index + 1}`}
       class="footer-gallery-image"
-      loading="lazy"
+      loading={'eager'}
       decoding="async"
       fetchpriority="low"
       width="120"
