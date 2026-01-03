@@ -5,6 +5,35 @@ media:
     output: /images
     extensions: [ png, webp, jpg ]
 content:
+  - name: gallery
+    label: Gallery
+    path: src/config/gallery.json
+    type: file
+    fields:
+      - name: images
+        label: Gallery Images
+        list: true
+        fields:
+          - name: image
+            label: Image
+            type: image
+            required: true
+          - name: alt
+            label: Alt text
+            type: string
+            required: true
+          - name: caption
+            label: Caption
+            type: string
+            required: false
+          - name: width
+            label: Width (px)
+            type: number
+            required: false
+          - name: height
+            label: Height (px)
+            type: number
+            required: false
   - name: site-settings
     label: Site Settings
     path: src/config/site.json
@@ -21,6 +50,10 @@ content:
         label: Website URL
         type: string
         pattern: ^(https?://)?(www.)?[a-zA-Z0-9.-]+.[a-zA-Z]{2,}(/[^s]*)?$
+      - name: logo
+        label: Logo image
+        type: image
+        description: Image used as the business Logo
       - name: cover
         label: Preview image
         type: image

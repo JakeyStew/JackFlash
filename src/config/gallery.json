@@ -1,0 +1,18 @@
+{
+  "images": [
+    {
+      "image": "/images/gallery/photo-1.webp",
+      "alt": "Team working together at a desk",
+      "caption": "Our team at work",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "image": "/images/gallery/photo-2.webp",
+      "alt": "Office exterior in daylight",
+      "caption": "Company headquarters",
+      "width": 800,
+      "height": 600
+    }
+  ]
+}

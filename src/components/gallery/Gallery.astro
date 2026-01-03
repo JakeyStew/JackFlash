@@ -1,0 +1,20 @@
+---
+import gallery from '../../config/gallery.json';
+const { images } = gallery;
+---
+
+<div class="gallery">
+  {images.map((item) => (
+    <figure class="gallery-item">
+      <img
+        src={item.image}
+        alt={item.alt}
+        width={item.width}
+        height={item.height}
+        loading="lazy"
+        decoding="async"
+      />
+      {item.caption && <figcaption>{item.caption}</figcaption>}
+    </figure>
+  ))}
+</div>
