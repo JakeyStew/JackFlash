@@ -9,51 +9,60 @@ const { images } = gallery;
 ---
 
 <div class="gallery masonry">
-  {images.map((item, index) => (
-    <figure class="gallery-item">
-      <a href={`#img-${index}`}>
-        <Image
-            src={item.image}
-            alt={item.alt}
-            width={item.width}
-            height={item.height}
-            loading={'eager'}
-            decoding="async"
-            oncontextmenu="return false;"
-            draggable="false"
-        />
-      </a>
-      {/*item.caption && <figcaption>{item.caption}</figcaption>*/}
-    </figure>
-  ))}
+  {images.map((item, index) => {
+    // Fallback values if width/height are missing
+    const width = item.width ?? 800;
+    const height = item.height ?? 600;
+    
+    return (
+      <figure class="gallery-item">
+        <a href={`#img-${index}`}>
+          <Image
+              src={item.image}
+              alt={item.alt}
+              width={width}
+              height={height}
+              loading={'eager'}
+              decoding="async"
+              oncontextmenu="return false;"
+              draggable="false"
+          />
+        </a>
+      </figure>
+    )
+  })}
 </div>
 
-{images.map((item, index) => (
-  <div id={`img-${index}`} class="lightbox">
-    <a
-      href="#"
-      class="lightbox-close"
-      aria-label="Close image"
-    ></a>
-
-    <figure class="lightbox-content">
-        <div class="image-wrapper">
-            <Image
-            src={item.image}
-            alt={item.alt}
-            width={item.width}
-            height={item.height}
-            loading="eager"
-            draggable="false"
-            oncontextmenu="return false;"
-            />
-            <span class="watermark">© {title}</span>
-        </div>
-      {item.caption && (
-        <figcaption class="lightbox-caption">
-          {item.caption}
-        </figcaption>
-      )}
-    </figure>
-  </div>
-))}
+{images.map((item, index) => {
+  // Fallback values if width/height are missing
+  const width = item.width ?? 800;
+  const height = item.height ?? 600;
+  return (
+    <div id={`img-${index}`} class="lightbox">
+      <a
+        href="#"
+        class="lightbox-close"
+        aria-label="Close image"
+      ></a>
+      <figure class="lightbox-content">
+          <div class="image-wrapper">
+              <Image
+              src={item.image}
+              alt={item.alt}
+              width={width}
+              height={height}
+              loading="eager"
+              draggable="false"
+              oncontextmenu="return false;"
+              />
+              <span class="watermark">© {title}</span>
+          </div>
+        {item.caption && (
+          <figcaption class="lightbox-caption">
+            {item.caption}
+          </figcaption>
+        )}
+      </figure>
+    </div>
+  )
+})}
