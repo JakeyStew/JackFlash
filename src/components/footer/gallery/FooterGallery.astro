@@ -5,7 +5,17 @@ const { images } = footerGallery;  // Destructure the images array
 ---
 
 <div class="footer-gallery">
-  {images.map((image, index) => (
-    <img src={image.image} alt={`Footer Gallery Image ${index + 1}`} class="footer-gallery-image" />
+  {images?.map((item, index) => (
+    <img
+      src={item.image}
+      alt={`Footer Gallery Image ${index + 1}`}
+      class="footer-gallery-image"
+      loading="lazy"
+      decoding="async"
+      fetchpriority="low"
+      width="120"
+      height="120"
+    />
   ))}
 </div>
+
