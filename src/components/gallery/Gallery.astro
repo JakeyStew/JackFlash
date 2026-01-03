@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import gallery from '../../config/gallery.json';
 import '../gallery/Gallery.scss';
 
-// Props
 const { title } = Astro.props;
 const { images } = gallery;
 ---
@@ -34,7 +33,6 @@ const { images } = gallery;
 </div>
 
 {images.map((item, index) => {
-  // Fallback values if width/height are missing
   const width = item.width ?? 800;
   const height = item.height ?? 600;
   return (
