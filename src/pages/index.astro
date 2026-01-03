@@ -1,9 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Gallery from '../components/gallery/Gallery.astro';
+
+// Props
+import { title as SITE_TITLE, description as SITE_DESC, url as SITE_URL, logo as SITE_LOGO } from '../config/site.json';
+
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  image?: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESC, url = SITE_URL, image = SITE_LOGO } = Astro.props;
 ---
 
 <BaseLayout>
-  <Gallery />
+  <Gallery title={title}/>
 </BaseLayout>
 

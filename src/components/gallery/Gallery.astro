@@ -2,6 +2,9 @@
 import { Image } from 'astro:assets';
 import gallery from '../../config/gallery.json';
 import '../gallery/Gallery.scss';
+
+// Props
+const { title } = Astro.props;
 const { images } = gallery;
 ---
 
@@ -16,6 +19,8 @@ const { images } = gallery;
             height={item.height}
             loading={'eager'}
             decoding="async"
+            oncontextmenu="return false;"
+            draggable="false"
         />
       </a>
       {/*item.caption && <figcaption>{item.caption}</figcaption>*/}
@@ -25,13 +30,30 @@ const { images } = gallery;
 
 {images.map((item, index) => (
   <div id={`img-${index}`} class="lightbox">
-    <a href="#" class="lightbox-close" aria-label="Close image"></a>
-    <Image
-        src={item.image}
-        alt={item.alt}
-        width={item.width}
-        height={item.height}
-        loading={'eager'}
-    />
+    <a
+      href="#"
+      class="lightbox-close"
+      aria-label="Close image"
+    ></a>
+
+    <figure class="lightbox-content">
+        <div class="image-wrapper">
+            <Image
+            src={item.image}
+            alt={item.alt}
+            width={item.width}
+            height={item.height}
+            loading="eager"
+            draggable="false"
+            oncontextmenu="return false;"
+            />
+            <span class="watermark">© {title}</span>
+        </div>
+      {item.caption && (
+        <figcaption class="lightbox-caption">
+          {item.caption}
+        </figcaption>
+      )}
+    </figure>
   </div>
 ))}
