@@ -1,12 +1,11 @@
 ---
-const footerGallery = await Astro.fetchContent('footer-gallery');  // Fetch CMS content
-const footer_images = footerGallery.images || [];  // Get images from CMS
+import footerGallery from '../../../config/footer-gallery.json';  // Import the PagesCMS config
 
-const imagePaths = footer_images.map((image) => image.image.url);  // Extract URLs
+const { images } = footerGallery;  // Destructure the images array
 ---
 
 <div class="footer-gallery">
-  {imagePaths.map((image, index) => (
-    <img src={image} alt={`Footer Gallery Image ${index + 1}`} class="footer-gallery-image" />
+  {images.map((image, index) => (
+    <img src={image.image} alt={`Footer Gallery Image ${index + 1}`} class="footer-gallery-image" />
   ))}
 </div>

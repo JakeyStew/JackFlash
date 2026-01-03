@@ -1,7 +1,7 @@
 media: 
   - name: images
     label: Images
-    input: src/images
+    input: public/images
     output: /images
     extensions: [ png, webp, jpg ]
 content:
@@ -45,7 +45,7 @@ content:
             pattern: ^https?://.*  # Ensure it's a valid URL
   - name: footer-gallery
     label: Footer Gallery
-    path: src/config/footer-gallery.config.ts  # This points to your configuration file
+    path: src/config/footer-gallery.json
     type: file
     fields:
       - name: images
