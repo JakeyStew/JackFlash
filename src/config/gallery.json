@@ -1,18 +1,73 @@
 {
   "images": [
     {
-      "image": "/images/gallery/images.png",
+      "image": "/images/gallery/10287.jpg",
       "alt": "Team working together at a desk",
       "caption": "Our team at work",
       "width": 800,
       "height": 600
     },
     {
-      "image": "/images/gallery/images-1.png",
+      "image": "/images/gallery/5-reasons-why-the-equine-industry-needs-Apprentice-Grooms.webp",
       "alt": "Office exterior in daylight",
       "caption": "Company headquarters",
       "width": 800,
       "height": 600
+    },
+    {
+      "image": "/images/gallery/Equine-callout-Equine-students-on-horseback-laughing_2024-05-02-151435_lzvm.jpg",
+      "alt": "Office exterior in daylight",
+      "caption": "Office exterior in daylight",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "image": "/images/gallery/equine-photo-session_0479.jpg",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/Equine-Photograpahy-09242-Edit-Edit.jpg",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/equine-photography-posing.jpg",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/Gretchen_Kurtz_Senior_AWP_127.webp",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/Homepage-Equine-Photoshoots.jpg",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/horses-grooming-free-image_edited.jpg",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/images_1.jpg",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/images_12.jpg",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/images.jpg",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/images.png",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/postgraduate-equine-hartpury-university.webp",
+      "alt": "Office exterior in daylight"
+    },
+    {
+      "image": "/images/gallery/rsz_equine_39-1.webp",
+      "alt": "Office exterior in daylight"
     }
   ]
 }
