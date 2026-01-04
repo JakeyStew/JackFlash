@@ -1,0 +1,40 @@
+.footer-container {
+    display: flex;
+    flex-direction: column;
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-gallery {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Tablets and small laptops (769px - 1024px) */
+@media (min-width: 769px) {
+
+}
+
+/* Large desktops and high-resolution screens (1025px and up) */
+@media (min-width: 1025px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .socials {
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+        }
+    }
+}
+
+/* Extra-large screens (1440px and up) */
+@media (min-width: 1440px) {
+
+}

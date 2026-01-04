@@ -18,8 +18,10 @@ const { social_links } = socials;
 
 <footer class="container">
   <div class="footer-container">
-    <Socials social_links={social_links} />
+    <div class="socials">
+      <Socials social_links={social_links} />
+      <p class="footer-text">© {year} {title}. All Rights Reserved.</p>
+    </div>
     <FooterGallery />
-    <p class="footer-text">© {year} {title}. All Rights Reserved.</p>
   </div>
 </footer>

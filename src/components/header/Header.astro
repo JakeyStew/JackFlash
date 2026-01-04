@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import { title as SITE_TITLE, description as SITE_DESC, url as SITE_URL, logo as SITE_LOGO } from '../../config/site.json';
 
+import '../header/Header.scss';
+
 interface Props {
   title: string;
   description: string;
@@ -9,9 +11,10 @@ interface Props {
   image?: string;
 }
 
-const { title = SITE_TITLE, description = SITE_DESC, url = SITE_URL, image = SITE_LOGO } = Astro.props;
+const { title = SITE_TITLE, url = SITE_URL, image = SITE_LOGO } = Astro.props;
 ---
 <header class="container">
+  
   <a
     href={url}
     target="_self"
@@ -28,7 +31,4 @@ const { title = SITE_TITLE, description = SITE_DESC, url = SITE_URL, image = SIT
       loading={'eager'}
       fetchpriority="high"/>
   </a>
-  <nav>
-
-  </nav>
 </header>
