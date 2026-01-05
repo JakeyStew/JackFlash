@@ -34,6 +34,17 @@ content:
             label: Height (px)
             type: number
             required: false
+  - name: contact
+    label: Contact Page
+    path: src/page
+    type: file
+    fields: 
+      - name: title
+        label: Website title
+        type: string
+      - name: description
+        label: Website description
+        type: string
   - name: site-settings
     label: Site Settings
     path: src/config/site.json
