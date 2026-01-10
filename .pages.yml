@@ -36,15 +36,36 @@ content:
             required: false
   - name: contact
     label: Contact Page
-    path: src/page
+    path: src/config/contact.json
     type: file
-    fields: 
-      - name: title
-        label: Website title
+    fields:
+      - name: heading
+        label: Heading
         type: string
-      - name: description
-        label: Website description
+        required: true
+
+      - name: intro
+        label: Intro Text
+        type: text
+        required: false
+
+      - name: submitLabel
+        label: Submit Button Label
         type: string
+        default: Send message
+
+      - name: successMessage
+        label: Success Message
+        type: string
+
+      - name: errorMessage
+        label: Error Message
+        type: string
+
+      - name: recipientEmail
+        label: Recipient Email
+        type: string
+        pattern: ^[^@\s]+@[^@\s]+\.[^@\s]+$
   - name: site-settings
     label: Site Settings
     path: src/config/site.json

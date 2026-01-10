@@ -7,7 +7,7 @@ const { title } = Astro.props;
 const { images } = gallery;
 ---
 
-<div class="gallery masonry">
+<div class="gallery masonry container">
   {images.map((item, index) => {
     // Fallback values if width/height are missing
     const width = item.width ?? 800;

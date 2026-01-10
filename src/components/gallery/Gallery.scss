@@ -1,25 +1,12 @@
 .masonry {
   column-count: 8;
-  column-gap: 0;
-}
-
-@media (max-width: 900px) {
-  .masonry {
-    column-count: 4;
-    column-gap: 0;
-  }
-}
-
-@media (max-width: 500px) {
-  .masonry {
-    column-count: 2;
-    column-gap: 0;
-  }
+  column-gap: 10px;
 }
 
 .gallery-item {
   margin: 0;
   padding: 0;
+  margin-bottom: 10px;
   break-inside: avoid;
 }
 
@@ -28,7 +15,28 @@
   height: auto;
   display: block;
   box-sizing: border-box;
-  border: solid 1px #000000;
+}
+
+@media (max-width: 900px) {
+  .masonry {
+    column-count: 4;
+    column-gap: 0;
+  }
+
+  .gallery-item {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .masonry {
+    column-count: 2;
+    column-gap: 0;
+  }
+
+  .gallery-item {
+    margin-bottom: 0;
+  }
 }
 
 .lightbox {
