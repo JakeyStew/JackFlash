@@ -1,0 +1,8 @@
+{
+  "heading": "Contact Us",
+  "intro": "Have a question or want to work with us? Fill out the form below and we’ll get back to you as soon as possible.",
+  "submitLabel": "Send message",
+  "successMessage": "Thanks for getting in touch! We’ll reply shortly.",
+  "errorMessage": "Something went wrong. Please try again later.",
+  "recipientEmail": "hello@example.com"
+}
